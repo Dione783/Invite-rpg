@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./index.css" rel="stylesheet">
+    <title>????</title>
+</head>
+<body>
+    <div id="box-container">
+        <div class="items">
+
+        </div>
+        <div class="items">
+
+        </div>
+        <div class="items">
+
+        </div>
+        <div class="items">
+
+        </div>
+        <div class="items">
+
+        </div>
+        <div class="items">
+
+        </div>
+        <div class="items">
+
+        </div>
+        <div class="items">
+
+        </div>
+    </div>
+    <script>
+        window.onload = carregaOlhos
+        let quantidade = 0
+        function carregaOlhos(){
+            let box = document.getElementById("box-container");
+            let item = document.querySelectorAll(".items")
+
+            let newImage = document.createElement("img");
+            newImage.src = "https://theyearofhalloween.com/wp-content/uploads/2012/12/tumblr_mdy8oxxjhd1rwsdu5o1_400.gif";
+            newImage.classList.add("gif");
+            let random = Math.floor(Math.random() * 8);
+            console.log(random)
+            item.forEach((element,index) => {
+                if(index == random) {
+                    element.appendChild(newImage);
+                    removeEye(item,newImage);
+                    
+                }
+            })
+        }
+
+        function removeEye(item,newImage) {
+            item.forEach((element,index) => {
+                element.addEventListener("click",()=>{
+                    element.removeChild(newImage);
+                    if(quantidade < 8){
+                        addEye(item,newImage);
+                    }
+                    quantidade++;
+                });
+            });
+        }
+
+        function addEye(item,newImage){
+            let random = Math.floor(Math.random() * 8)
+            item.forEach((element,index) => {
+                if(random == index){
+                    element.appendChild(newImage)
+                }
+            });
+        }
+    </script>
+</body>
+</html>

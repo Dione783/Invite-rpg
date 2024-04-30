@@ -1,0 +1,29 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: black;
+}
+#box-container{
+    margin: auto;
+    display: grid;
+    flex-direction: row;
+    max-width:98%;
+    height: 98%;
+    grid-template: 150px 150px/150px 150px 150px 150px;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+#box-container img{
+    width: 150px;
+    height: 150px;
+}
+#box-container .items{
+    max-width: 150px;
+    box-sizing: border-box;
+    width: 150px;
+    height: 150px;
+    padding: 5px;
+}
