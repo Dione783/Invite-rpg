@@ -36,8 +36,8 @@
     <script>
         window.onload = carregaOlhos
         let quantidade = 0
+        let box = document.getElementById("box-container");
         function carregaOlhos(){
-            let box = document.getElementById("box-container");
             let item = document.querySelectorAll(".items")
 
             let newImage = document.createElement("img");
@@ -60,6 +60,8 @@
                     element.removeChild(newImage);
                     if(quantidade < 8){
                         addEye(item,newImage);
+                    }else{
+                        box.innerHTML = "<a href='https://discord.gg/rDPsuX2hXW'>Google<a>"
                     }
                     quantidade++;
                 });
