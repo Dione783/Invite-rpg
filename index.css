@@ -4,7 +4,7 @@ html,body{
     margin: auto;
     background-color: black;
 }
-#box-container{
+.box-container{
     margin: auto;
     display: grid;
     flex-direction: row;
@@ -17,19 +17,19 @@ html,body{
     box-sizing: border-box;
     text-align: center;
 }
-#box-container audio{
+.box-container audio{
     display: none;
 }
-#box-container img{
+.box-container img{
     width: 150px;
     height: 150px;
 }
-#box-container div{
+.box-container div{
     width: 400px;
     height: 30px;
     margin: auto;
 }
-#box-container a{
+.box-container a{
     color: red;
     text-decoration: none;
     text-align: center;
@@ -38,10 +38,10 @@ html,body{
     margin: auto;
     font-size: 36px;
 }
-#box-container a:visited{
+.box-container a:visited{
     color: red;
 }
-#box-container .items{
+.box-container .items{
     max-width: 150px;
     box-sizing: border-box;
     width: 150px;

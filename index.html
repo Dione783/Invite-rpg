@@ -7,8 +7,9 @@
     <title>????</title>
 </head>
 <body>
-    <div id="box-container">
-        <audio id="audio" src="./som.mp3" controls></audio>
+    <div class="box-container">
+        <audio id="audio" src="./som.mp3"></audio>
+        <audio id="music" autoplay="true" controls autoplay><source src="./music.mp3" type="audio/mpeg"></source></audio>
         <div class="items">
 
         </div>
@@ -37,16 +38,15 @@
     <script>
         window.onload = carregaOlhos
         let quantidade = 0
-        let box = document.getElementById("box-container");
+        let box = document.querySelector(".box-container");
         let audio = document.getElementById("audio");
+        let music = document.getElementById("music");
         function carregaOlhos(){
             let item = document.querySelectorAll(".items")
-
             let newImage = document.createElement("img");
             newImage.src = "https://theyearofhalloween.com/wp-content/uploads/2012/12/tumblr_mdy8oxxjhd1rwsdu5o1_400.gif";
             newImage.classList.add("gif");
             let random = Math.floor(Math.random() * 8);
-            console.log(random)
             item.forEach((element,index) => {
                 if(index == random) {
                     element.appendChild(newImage);
@@ -54,6 +54,9 @@
                 }
             })
         }
+        box.addEventListener("click",()=>{
+            music.play()
+        })
 
         function removeEye(item,newImage) {
             item.forEach((element,index) => {
@@ -68,7 +71,7 @@
                         },1500)
                     }else{
                         box.style.display = "flex";
-                        box.innerHTML = "<div><audio id='audio' src='./som.mp3' controls></audio><a href='https://discord.gg/rDPsuX2hXW'>E҈̴n̸҈f҉r̴e̵҉n҈t̸e҉ s҉e̴u̴̷s҈ m̵e̷҉d̴̸o̵҈s̶<a></div>"
+                        box.innerHTML = "<div><audio id='audio' src='./som.mp3' controls></audio><a href='https://discord.gg/rDPsuX2hXW'>V̴o҉c҉ê̸ s҉a҉b̵̷e̵̴ o̷̸ q҈҉u̴e̴̵ s̴̷e̸̴ e̶҉s̸c҉o̷n̴̵d̴҉e҈̴ n҈̸a̷s̵ s̷o̴m̵҉b̴҈r̴̶a̶̸s̴?̶<a></div>"
                         audio = document.getElementById("audio");
                         audio.play();
                     }
