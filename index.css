@@ -17,7 +17,7 @@ html,body{
     box-sizing: border-box;
     text-align: center;
 }
-#box-container #audio{
+#box-container audio{
     display: none;
 }
 #box-container img{
