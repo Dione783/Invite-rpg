@@ -15,10 +15,19 @@ html,body{
     align-content: space-between;
     align-items: center;
     box-sizing: border-box;
+    text-align: center;
+}
+#box-container #audio{
+    display: none;
 }
 #box-container img{
     width: 150px;
     height: 150px;
+}
+#box-container div{
+    width: 400px;
+    height: 30px;
+    margin: auto;
 }
 #box-container a{
     color: red;
@@ -26,6 +35,11 @@ html,body{
     text-align: center;
     padding: 5px;
     width: 80px;
+    margin: auto;
+    font-size: 36px;
+}
+#box-container a:visited{
+    color: red;
 }
 #box-container .items{
     max-width: 150px;
@@ -33,4 +47,5 @@ html,body{
     width: 150px;
     height: 150px;
     padding: 5px;
+    margin: 0;
 }

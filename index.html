@@ -8,6 +8,7 @@
 </head>
 <body>
     <div id="box-container">
+        <audio id="audio" src="./som.mp3" controls></audio>
         <div class="items">
 
         </div>
@@ -37,6 +38,7 @@
         window.onload = carregaOlhos
         let quantidade = 0
         let box = document.getElementById("box-container");
+        let audio = document.getElementById("audio");
         function carregaOlhos(){
             let item = document.querySelectorAll(".items")
 
@@ -48,8 +50,7 @@
             item.forEach((element,index) => {
                 if(index == random) {
                     element.appendChild(newImage);
-                    removeEye(item,newImage);
-                    
+                    removeEye(item,newImage);   
                 }
             })
         }
@@ -57,11 +58,17 @@
         function removeEye(item,newImage) {
             item.forEach((element,index) => {
                 element.addEventListener("click",()=>{
+                    audio.play()
                     element.removeChild(newImage);
                     if(quantidade < 8){
-                        addEye(item,newImage);
+                        setTimeout(()=>{
+                            audio.pause()
+                            audio.currentTime = 0
+                            addEye(item,newImage)
+                        },1500)
                     }else{
-                        box.innerHTML = "<a href='https://discord.gg/rDPsuX2hXW'>E҈̴n̸҈f҉r̴e̵҉n҈t̸e҉ s҉e̴u̴̷s҈ m̵e̷҉d̴̸o̵҈s̶<a>"
+                        box.style.display = "flex";
+                        box.innerHTML = "<div><a href='https://discord.gg/rDPsuX2hXW'>E҈̴n̸҈f҉r̴e̵҉n҈t̸e҉ s҉e̴u̴̷s҈ m̵e̷҉d̴̸o̵҈s̶<a></div>"
                     }
                     quantidade++;
                 });
