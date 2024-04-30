@@ -20,6 +20,13 @@ html,body{
     width: 150px;
     height: 150px;
 }
+#box-container a{
+    color: red;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    width: 80px;
+}
 #box-container .items{
     max-width: 150px;
     box-sizing: border-box;
