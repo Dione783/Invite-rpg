@@ -10,6 +10,7 @@
     <div class="box-container">
         <audio id="audio" src="./som.mp3"></audio>
         <audio id="music" autoplay="true" controls autoplay><source src="./music.mp3" type="audio/mpeg"></source></audio>
+        <div id="audios"></div>
         <div class="items">
 
         </div>
@@ -41,6 +42,8 @@
         let box = document.querySelector(".box-container");
         let audio = document.getElementById("audio");
         let music = document.getElementById("music");
+        let audios = document.querySelectorAll("#audios");
+
         function carregaOlhos(){
             let item = document.querySelectorAll(".items")
             let newImage = document.createElement("img");
@@ -71,7 +74,10 @@
                         },1500)
                     }else{
                         box.style.display = "flex";
-                        box.innerHTML = "<div><a href='https://discord.gg/rDPsuX2hXW'>E҈̴n̸҈f҉r̴e̵҉n҈t̸e҉ s҉e̴u̴̷s҈ m̵e̷҉d̴̸o̵҈s̶<a></div>"
+                        let newElement = document.createElement("a");
+                        newElement.href = 'https://discord.gg/rDPsuX2hXW';
+                        newElement.textContent = "E҈̴n̸҈f҉r̴e̵҉n҈t̸e҉ s҉e̴u̴̷s҈ m̵e̷҉d̴̸o̵҈s̶";
+                        audios.forEach(element=>{element.appendChild(newElement)})
                         audio = document.getElementById("audio");
                         audio.play();
                     }
